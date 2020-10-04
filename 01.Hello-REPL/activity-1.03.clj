@@ -2,7 +2,7 @@
 ;   "Return a transformed version of the string `string` based on the `calmness-level`"
 ;   [string calmness-level]
 ;   (println "Clojure Meditate v2.0")
-;   (if (< calmness-level 4)
+;   (if (< calmness-level 5)
 ;     (str (clojure.string/upper-case string) ", I TELL YA!")
 ;     (if (<= 4 calmness-level 9)
 ;       (clojure.string/capitalize string)
@@ -14,6 +14,6 @@
   [string calmness-level]
   (println "Clojure Meditate v2.0")
   (cond
-    (< calmness-level 4) (str (clojure.string/upper-case string) ", I TELL YA!")
+    (< calmness-level 5) (str (clojure.string/upper-case string) ", I TELL YA!")
     (<= 4 calmness-level 9) (clojure.string/capitalize string)
     (= 10 calmness-level 10) (clojure.string/reverse string)))
