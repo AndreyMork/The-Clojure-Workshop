@@ -1,13 +1,13 @@
 ; 1
-(def supported-currencies #{
-  "Dollar",
-  "Japanes yen",
-  "Euro",
-  "Indian rupee",
-  "Brittish pound",
-  })
+(def supported-currencies #{"Dollar",
+                            "Japanes yen",
+                            "Euro",
+                            "Indian rupee",
+                            "Brittish pound"})
 
 ; 2
+
+
 (get supported-currencies "Dollar") ; "Dollar"
 (get supported-currencies "Swiss franc") ; nil
 

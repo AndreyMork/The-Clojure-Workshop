@@ -15,10 +15,8 @@
 ; [0 1 1 2 3 5 8 13 21]
 
 ; 5
-(let [
-  size (count fibonacci)
-  last-number (last fibonacci)
-  second-to-last-number (fibonacci (- size 2))
-  ]
+(let [size (count fibonacci)
+      last-number (last fibonacci)
+      second-to-last-number (fibonacci (- size 2))]
   (conj fibonacci (+ last-number second-to-last-number)))
 ; [0 1 1 2 3 5 8 13]
