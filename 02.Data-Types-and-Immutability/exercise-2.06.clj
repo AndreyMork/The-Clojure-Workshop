@@ -1,27 +1,28 @@
 ; 1
-(def gemstone-db {:ruby {:name "Ruby"
-                         :stock 120
-                         :sales [1990 3644 6376 4918 7882 6747 7495 8573 5097 1712]
-                         :properties {:dispersion 0.018
-                                      :hardness 9.0
-                                      :refractive-index [1.77 1.78]
-                                      :color "Red"}}
+(def gemstone-db
+  {:ruby {:name "Ruby"
+          :stock 120
+          :sales [1990 3644 6376 4918 7882 6747 7495 8573 5097 1712]
+          :properties {:dispersion 0.018
+                       :hardness 9.0
+                       :refractive-index [1.77 1.78]
+                       :color "Red"}}
 
-                  :diamond {:name "Diamond"
-                            :stock 10
-                            :sales [8295 329 5960 6118 4189 3436 9833 8870 9700 7182 7061 1579]
-                            :properties {:dispersion 0.044
-                                         :hardness 10
-                                         :refractive-index [2.417 2.419]
-                                         :color "Typically yellow, brown or gray to colorless"}}
+   :diamond {:name "Diamond"
+             :stock 10
+             :sales [8295 329 5960 6118 4189 3436 9833 8870 9700 7182 7061 1579]
+             :properties {:dispersion 0.044
+                          :hardness 10
+                          :refractive-index [2.417 2.419]
+                          :color "Typically yellow, brown or gray to colorless"}}
 
-                  :moissanite {:name "Moissanite"
-                               :stock 45
-                               :sales [7761 3220]
-                               :properties {:dispersion 0.104
-                                            :hardness 9.5
-                                            :refractive-index [2.65 2.69]
-                                            :color "Colorless, green, yellow"}}})
+   :moissanite {:name "Moissanite"
+                :stock 45
+                :sales [7761 3220]
+                :properties {:dispersion 0.104
+                             :hardness 9.5
+                             :refractive-index [2.65 2.69]
+                             :color "Colorless, green, yellow"}}})
 
 ; 2
 
@@ -45,9 +46,9 @@
 
 ; 7
 (assoc
- (:ruby gemstone-db)
- :properties
- {:color "Near colorless through pink through all shades of red to a deep crimson"})
+  (:ruby gemstone-db)
+  :properties
+  {:color "Near colorless through pink through all shades of red to a deep crimson"})
 ; {:name "Ruby", :stock 120, :sales [1990 3644 6376 4918 7882 6747 7495 8573 5097 1712], :properties {:color "Near colorless through pink through all shades of red to a deep crimson"}}
 
 ;8
@@ -56,24 +57,24 @@
 
 ;9
 (update
- (:ruby gemstone-db)
- :properties
- into {:color "Near colorless through pink through all shades of red to a deep crimson"})
+  (:ruby gemstone-db)
+  :properties
+  into {:color "Near colorless through pink through all shades of red to a deep crimson"})
 ; {:name "Ruby", :stock 120, :sales [1990 3644 6376 4918 7882 6747 7495 8573 5097 1712], :properties {:dispersion 0.018, :hardness 9.0, :refractive-index [1.77 1.78], :color "Near colorless through pink through all shades of red to a deep crimson"}}
 
 ; 10
 (assoc-in
- gemstone-db
- [:ruby :properties :color]
- "Near colorless through pink through all shades of red to a deep crimson")
+  gemstone-db
+  [:ruby :properties :color]
+  "Near colorless through pink through all shades of red to a deep crimson")
 ; {:ruby {:name "Ruby", :stock 120, :sales [1990 3644 6376 4918 7882 6747 7495 8573 5097 1712], :properties {:dispersion 0.018, :hardness 9.0, :refractive-index [1.77 1.78], :color "Near colorless through pink through all shades of red to a deep crimson"}}, :diamond {:name "Diamond", :stock 10, :sales [8295 329 5960 6118 4189 3436 9833 8870 9700 7182 7061 1579], :properties {:dispersion 0.044, :hardness 10, :refractive-index [2.417 2.419], :color "Typically yellow, brown or gray to colorless"}}, :moissanite {:name "Moissanite", :stock 45, :sales [7761 3220], :properties {:dispersion 0.104, :hardness 9.5, :refractive-index [2.65 2.69], :color "Colorless, green, yellow"}}}
 ; 11
 (defn change-color
   [db gemstone new-color]
   (assoc-in
-   gemstone-db
-   [gemstone :properties :color]
-   new-color))
+    gemstone-db
+    [gemstone :properties :color]
+    new-color))
 
 ; 12
 (change-color gemstone-db :ruby "Some kind of red")

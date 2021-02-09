@@ -12,11 +12,11 @@
 
 ; 3
 (let
- [big-booking (conj
-               booking
-               [[37.742, -25.6976] [51.1537, 0.1821]]
-               [[51.1537, 0.1821]  [48.9615, 2.4372]])
-  [id customer-name sensitive-info flight1 flight2 flight3] big-booking]
+  [big-booking (conj
+                 booking
+                 [[37.742, -25.6976] [51.1537, 0.1821]]
+                 [[51.1537, 0.1821]  [48.9615, 2.4372]])
+   [id customer-name sensitive-info flight1 flight2 flight3] big-booking]
   (println id customer-name flight1 flight2 flight3))
 
 ; 4
@@ -42,15 +42,15 @@
         [departure-lat departure-lon] departure
         [arival-lat arival-lon] arival]
     (println
-     (str
-      "Flying from: Lat "
-      departure-lat
-      " Lon "
-      departure-lon
-      " Flying to: Lat "
-      arival-lat
-      " Lon "
-      arival-lon))))
+      (str
+        "Flying from: Lat "
+        departure-lat
+        " Lon "
+        departure-lon
+        " Flying to: Lat "
+        arival-lat
+        " Lon "
+        arival-lon))))
 
 ; 8
 (defn print-booking

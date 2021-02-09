@@ -1,7 +1,9 @@
-(def favorite-fruit {:name "Kiwi",
-                     :color "Green",
-                     :kcal_per_100g 61,
-                     :distinguish_mark "Hairy"})
+(def favorite-fruit
+  {:name "Kiwi",
+   :color "Green",
+   :kcal_per_100g 61,
+   :distinguish_mark "Hairy"})
+
 
 (get favorite-fruit :name) ; "Kiwi"
 (get favorite-fruit :color) ; "Green"
@@ -26,6 +28,7 @@
                                                     :new_zealand 412000,
                                                     :iran 311000,
                                                     :chile 225000})
+
 
 (assoc favorite-fruit :kcal_per_100g (- (:kcal_per_100g favorite-fruit) 1))
 ; {:name "Kiwi", :color "Green", :kcal_per_100g 60, :distinguish_mark "Hairy"}

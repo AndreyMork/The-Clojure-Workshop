@@ -1,9 +1,10 @@
 ; 1
-(def supported-currencies #{"Dollar",
-                            "Japanes yen",
-                            "Euro",
-                            "Indian rupee",
-                            "Brittish pound"})
+(def supported-currencies
+  #{"Dollar",
+    "Japanes yen",
+    "Euro",
+    "Indian rupee",
+    "Brittish pound"})
 
 ; 2
 

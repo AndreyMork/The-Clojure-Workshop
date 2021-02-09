@@ -1,8 +1,8 @@
 (ns tennis
   (:require
-   [clojure.data.csv :as csv]
-   [clojure.java.io :as io]
-   [semantic-csv.core :as sc]))
+    [clojure.data.csv :as csv]
+    [clojure.java.io :as io]
+    [semantic-csv.core :as sc]))
 
 ; 4.12
 (defn first-match
@@ -11,6 +11,7 @@
     (->> (csv/read-csv r)
          sc/mappify
          first)))
+
 
 (defn five-matches
   [csv]
@@ -24,6 +25,7 @@
                                :loser_sets_won]))
          (take 5)
          doall)))
+
 
 (defn five-matches-int-sets
   [csv]
@@ -78,6 +80,7 @@
                                :tourney_slug]))
          doall)))
 
+
 (defn load-csv-file
   [file-path]
   (with-open [r (io/reader file-path)]
@@ -102,22 +105,26 @@
 (defn players-match?
   [player1 player2 {:keys [winner_name loser_name]}]
   (=
-   (hash-set winner_name loser_name)
-   #{player1 player2}))
+    (hash-set winner_name loser_name)
+    #{player1 player2}))
+
 
 (defn player-won?
   [player {:keys [winner_name]}]
   (= player winner_name))
 
+
 (defn is-competitive-match?
-  [{:keys [winner_sets_won loser_sets_won]}] (= 1 (- winner_sets_won loser_sets_won)))
+  [{:keys [winner_sets_won loser_sets_won]}]
+  (= 1 (- winner_sets_won loser_sets_won)))
+
 
 (defn rivalry-data
   [csv-file-path player1 player2]
   (let
-   [matches (match-query csv-file-path (partial players-match? player1 player2))
-    player1-victories (filter (partial player-won? player1) matches)
-    player2-victories (filter (partial player-won? player2) matches)]
+    [matches (match-query csv-file-path (partial players-match? player1 player2))
+     player1-victories (filter (partial player-won? player1) matches)
+     player2-victories (filter (partial player-won? player2) matches)]
     {:first-victory-player-1 (first player1-victories)
      :first-victory-player-2 (first player2-victories)
      :total-matches (count matches)

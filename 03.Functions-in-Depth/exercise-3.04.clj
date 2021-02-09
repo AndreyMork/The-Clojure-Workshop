@@ -5,6 +5,7 @@
    :cast-iron-saucepan #(- % 100 (rand-int 50))
    :sweet-potato identity})
 
+
 (defn strike
   "With one argument, strike a target with a default :fists `weapon`. 
   With two argument, strike a target with `weapon` and return the target entity"
@@ -13,9 +14,11 @@
    (let [weapon-fn (weapon weapon-fn-map)]
      (update target :health weapon-fn))))
 
+
 (def enemy {:name "Arnold" :health 250})
 
 (update enemy :health (comp (:sword weapon-fn-map) (:cast-iron-saucepan weapon-fn-map)))
+
 
 (defn mighty-strike
   "Strike a `target` with all weapons!"
