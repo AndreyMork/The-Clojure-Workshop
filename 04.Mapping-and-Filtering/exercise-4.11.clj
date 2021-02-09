@@ -3,7 +3,7 @@
 
 
 (with-open
-  [r (io/reader "match_scores_1991-2016_unindexed_csv.csv")]
+  [r (io/reader "../data/match_scores_1991-2016_unindexed_csv.csv")]
   (->> (csv/read-csv r)
        (map #(nth % 7))
        (take 6)
