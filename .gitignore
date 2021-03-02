@@ -1,3 +1,4 @@
 temp
 .clj-kondo
 .cpcache
+**/.lsp/**
